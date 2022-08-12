@@ -1,0 +1,38 @@
+<section class="hero is-primary is-bold is-fullheight">
+
+  <div class="hero-body">
+  
+    <div class="container has-text-centered">
+  
+      <h1 class="title"> 
+        Word Count
+      </h1>
+
+      <form (ngSubmit)="submitForm()">
+        <div class="field">
+          <label class="label">Type to get the number of words</label>
+          <input 
+            type="text" 
+            name="words" 
+            class="input" 
+            [(ngModel)]="words"
+            #nameInput="ngModel"
+            required>
+
+          <div class="help is-danger alert" *ngIf="nameInput.invalid && nameInput.dirty ">
+            The typed string must not be null.
+          </div>
+        </div>
+  
+        <button type="submit" class="button is-large is-warning">
+          Count!
+        </button>
+      </form>
+  
+      <br><br><div>{{result}}</div>
+
+    </div>
+  
+  </div>
+
+</section>
